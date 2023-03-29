@@ -542,6 +542,7 @@ class SuccessiveHalving(AbstractIntensifier):
 
         # If we have more selected configs, we remove the ones with the smallest crowding distance
         if len(selected_configs) > n_configs:
+            all_keys = [from_keys for _ in configs]
             selected_configs = sort_by_crowding_distance(rh, configs, all_keys)[:n_configs]
             logger.debug("Found more configs than required. Removed configs with smallest crowding distance.")
 
